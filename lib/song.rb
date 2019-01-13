@@ -1,10 +1,11 @@
 class Song
   attr_accessor :name, :artist, :genre
 
-  @@count = 0
+  @@count = 0  # total amount of songs, ever.
   @@artists = []
-  @@genres = []
-  @@genre_count = 0
+  @@genres = [] # array of all shoveled in genres
+
+  @@genre_count = {}
 
   def initialize(name, artist, genre)
     @@count += 1
@@ -25,9 +26,11 @@ class Song
   end
 
   def self.genre_count
-    genre_hash = @@genres.uniq.collect { |genre_key| }
-
-
+    @@genres.collect do |genre, key|
+      key = 0
+      @@genre_count[genre] ||= key
+      @@genre_count[genre] = key += 1
+    end
   end
 
 
