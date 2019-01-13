@@ -26,10 +26,9 @@ class Song
   end
 
   def self.genre_count
-    @@genres.collect do |genre, key|
-      key = 0
-      @@genre_count[genre] ||= key
-      @@genre_count[genre] = key += 1
+    @@genres.collect do |genre|
+    
+      @@genre_count[genre] ||= 0
     end
   end
 
