@@ -1,15 +1,20 @@
 class Song
-  #attr_accessor :name, :artist, :genre
-  attr_reader :name, :artist, :genre
-
+  attr_accessor :name, :artist, :genre
+  
   @@count = 0  # total amount of songs, ever.
-  @@artists = []
+  @@artists = [] # array of all shoveled in artists
   @@genres = [] # array of all shoveled in genres
 
   @@genre_count = {}
   @@artist_count = {}
 
   def initialize(name, artist, genre)
+# set instance variables to equal the arguments given
+# this allows it to be accessed: new_song.name => "this is a new song!"
+    @name = name
+    @artist = artist
+    @genre = genre
+
     @@count += 1
     @@artists << artist
     @@genres << genre
@@ -32,7 +37,7 @@ class Song
       @@genre_count[genre] ||= 0
       @@genre_count[genre] += 1
     end
-    @@genre_count # <--- implicit return, I think that's what it's called.
+    @@genre_count # <---- implicit return value
   end
 
   def self.artist_count
@@ -40,7 +45,7 @@ class Song
       @@artist_count[artist] ||= 0
       @@artist_count[artist] += 1
     end
-    @@artist_count
+    @@artist_count # <---- implicit return value
   end
 
 end # <---- method end
