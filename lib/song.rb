@@ -1,6 +1,6 @@
 class Song
   attr_accessor :name, :artist, :genre
-  
+
   @@count = 0  # total amount of songs, ever.
   @@artists = [] # array of all shoveled in artists
   @@genres = [] # array of all shoveled in genres
