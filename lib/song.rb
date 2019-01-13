@@ -1,5 +1,5 @@
 class Song
-  attr_accessor :name, :artist, :genre
+  #attr_accessor :name, :artist, :genre
   attr_reader :name, :artist, :genre
 
   @@count = 0  # total amount of songs, ever.
